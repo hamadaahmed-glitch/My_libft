@@ -1,0 +1,17 @@
+#ifndef LIBFT_H
+#define LIBFT_H
+#include <stdlib.h>
+
+/*void bzero(void *s, size_t n);
+int isalnum(char c);
+int isalpha(char c);
+int isascii(int ascii);
+int isdigit(char c);
+int isprint(int p);
+void *memset(void *b, int v, size_t s);
+int strlen(char *str);
+char tolower(char c);
+char toupper(char c);
+*/
+void *ft_memcpy(void *d, const void *s, size_t n);
+#endif
