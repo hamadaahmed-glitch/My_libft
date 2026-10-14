@@ -13,5 +13,6 @@ int strlen(char *str);
 char tolower(char c);
 char toupper(char c);
 */
-void *ft_memcpy(void *d, const void *s, size_t n);
+//void *ft_memcpy(void *d, const void *s, size_t n);
+void *ft_memmove(void *dst, const void *src, size_t len);
 #endif

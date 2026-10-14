@@ -23,3 +23,17 @@ void *ft_memset(void *b, int v, size_t s){
         temp[i++] = v;
     return (b);
 }
+
+
+#include <stdio.h>
+int main()
+{
+    char str[20] = {0};
+    char *p = "hello world";
+    int i = 0;
+    while(i < 11){
+        ft_memset(&str[i], p[i], 1);
+        i++;
+    }
+    printf("%s\n", str);
+}
