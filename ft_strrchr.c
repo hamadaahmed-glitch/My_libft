@@ -8,8 +8,8 @@ char *ft_strrchr(const char *src, int c)
     if (c != 0 && len == 0) return (NULL);
     if (c == 0) return (p + len);
 
-    while(--len > 0)
-        if((unsigned char)c == (*p + len))
+    while(--len >= 0)
+        if((unsigned char)c == *(p + len))
             return (p + len);
     return (NULL);
 }
@@ -17,6 +17,6 @@ char *ft_strrchr(const char *src, int c)
 #include <stdio.h>
 
 int main(){
-    char *p = ft_strrchr("hello world", 'l');
+    char *p = ft_strrchr("hello world", 'e');
     printf("the result is : %s", p);
 }
