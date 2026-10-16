@@ -27,12 +27,12 @@ void *ft_memcpy(void *d, const void *s, size_t n){
     return (d_temp - (i - 1));
 }
 
-#include "stdio.h"
-int main(){
-    char d[10];
-    char *y = ft_memcpy(NULL, NULL, 1);
-    char *z = ft_memcpy(NULL, "Hello guys", 1);
-    char *p = ft_memcpy(d, NULL, 1);
+// #include "stdio.h"
+// int main(){
+//     char d[10];
+//     char *y = ft_memcpy(NULL, NULL, 1);
+//     char *z = ft_memcpy(NULL, "Hello guys", 1);
+//     char *p = ft_memcpy(d, NULL, 1);
     
-    printf("d = %s, %s, %s", d, z, y);
-}
+//     printf("d = %s, %s, %s", d, z, y);
+// }
