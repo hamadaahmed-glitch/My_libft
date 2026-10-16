@@ -3,7 +3,7 @@
 char *ft_strchr(const char *s, int c){
     int verify = 1;
     while(verify){
-        if((unsigned char)c == (unsigned char)*s)
+        if((char)c == (char)*s)
             return ((char *)s);
         if(*s == 0)
             verify = 0;
