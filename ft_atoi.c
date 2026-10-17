@@ -21,3 +21,4 @@ int ft_atoi(const char *str)
     return ((int)(result * sign));
 }
 
+char *p = "hello guys"; // read only
