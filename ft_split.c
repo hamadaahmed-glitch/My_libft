@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hait-h-m <hait-h-m@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/18 17:37:52 by username          #+#    #+#             */
+/*   Updated: 2026/10/18 17:48:09 by hait-h-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 // static size_t ft_word_count(const char *str, char set)
@@ -21,38 +33,48 @@
 // }
 #include <stdio.h>
 
-static size_t ft_word_count(const char *str, char set){
-    size_t count = 0;
-    while(*str){
-        while(*str == set)
-            str++;
-        if(*str)
-            count++;
-        while(*str && *str != set)
-            str++;
-    }
-    return (count);
+static size_t	ft_word_count(const char *str, char set)
+{
+	size_t	count;
+
+	count = 0;
+	while (*str)
+	{
+		while (*str == set)
+			str++;
+		if (*str)
+			count++;
+		while (*str && *str != set)
+			str++;
+	}
+	return (count);
 }
 
 // static char** filling_the_matrix(const char ***str, char set)//, size_t count
 // {
 //     size_t verify;
 
-    
-
-    
 // }
 
-
-
-// char **ft_split(char const*s, char c)
+// char	**ft_split(char const *s, char c)
 // {
-//     //char count;
-//     char **matrix = filling_the_matrix(s, c)//(char **)malloc((ft_word_count(s, c) * sizeof(char *) + 1));// count = ft_word_count(s, c) * sizeof(char *) + 1)
-//     //filling_the_matrix(&(**matrix), )
+// 	char	count;
+
+// char	**matrix = filling_the_matrix(s, c)
+// (char **) malloc((ft_word_count(s, c) * sizeof(char *) + 1));
+// count = ft_word_count(s, c) * sizeof(char *) + 1)
+// //filling_the_matrix(&(**matrix), )
 // }
 
+// int	main(void)
+// {
+// 	printf("result is : %zu", ft_word_count("   s s ssss     d d    ", ' '));
+// }
 
-int main(){
-    printf("result is : %zu", ft_word_count("   s s ssss     d d    ", ' '));
+char	**ft_split(char const *s, char c)
+{
+	size_t	count;
+	char	**matrix;
+
+	matrix = (char **) malloc((sizeof(char *)) * (count = ft_word_count(s, c)));
 }
