@@ -19,7 +19,7 @@ void free_all(char **s){
 		return ;
 	while(*temp)
 		free(*temp++);
-	free(temp);
+	free(s);
 }
 
 // static size_t ft_word_count(const char *str, char set)
