@@ -13,11 +13,13 @@
 #include "libft.h"
 
 void free_all(char **s){
-	if(!s)
+	char **temp;
+	temp = s;
+	if(!temp)
 		return ;
-	while(*s)
-		free(*s++);
-	free(s);
+	while(*temp)
+		free(*temp++);
+	free(temp);
 }
 
 // static size_t ft_word_count(const char *str, char set)
