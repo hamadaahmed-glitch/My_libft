@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+void free_all(char **s){
+	while(*((*s)))
+		free((*s)++);
+	free(s);
+}
+
 // static size_t ft_word_count(const char *str, char set)
 // {
 //     size_t count;
@@ -76,5 +82,6 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 	char	**matrix;
 
-	matrix = (char **) malloc((sizeof(char *)) * (count = ft_word_count(s, c)));
+	if (!s && (matrix = (char **) malloc((sizeof(char *)) * (count = ft_word_count(s, c) + 1))))
+		return (NULL);
 }
