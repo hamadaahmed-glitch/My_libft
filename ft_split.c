@@ -13,7 +13,9 @@
 #include "libft.h"
 
 void free_all(char **s){
-	while(*((*s)))
+	if(!s)
+		return ;
+	while(*s)
 		free((*s)++);
 	free(s);
 }
