@@ -16,7 +16,7 @@ void free_all(char **s){
 	if(!s)
 		return ;
 	while(*s)
-		free((*s)++);
+		free(*s++);
 	free(s);
 }
 
