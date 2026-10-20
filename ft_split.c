@@ -22,6 +22,12 @@ void free_all(char **s){
 		free(*temp++);
 	free(s);
 }
+static size_t ft_strlen_set(char *s, char set){
+	size_t len;
+	while(s[len] && s[len] == set)
+		len++;
+	return len;
+}
 
 // static size_t ft_word_count(const char *str, char set)
 // {
@@ -61,6 +67,14 @@ static size_t	ft_word_count(const char *str, char set)
 	return (count);
 }
 
+// static char *ft_copy_word(char const *s, char c){
+// 	size_t len;
+// 	char *temp;
+// 	while(*s && *s != c)
+// 		s++;
+	
+// }
+
 static char** filling_the_matrix(const char *str, char set, size_t words)//, size_t count
 {
 	size_t i;
@@ -68,11 +82,11 @@ static char** filling_the_matrix(const char *str, char set, size_t words)//, siz
 	char *tmp;
 	char **matrix;
 
-	matrix = (char **)malloc(sizeof(char *) * words + 1);
+	//matrix = (char **)malloc(sizeof(char *) * words + 1);
 	i = 0;
     while(i < words)
 	{
-		
+
 		matrix[i] = 
 		i++;
 	}
@@ -99,8 +113,13 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	count;
 	char	**matrix;
-
-	if (!s && (matrix = (char **) malloc((sizeof(char *)) * (count = ft_word_count(s, c) + 1))))
+	if (!s)
 		return (NULL);
-	
+	//count = ft_word_count(s, c);
+	matrix = (char **) malloc((sizeof(char *)) * (count = ft_word_count(s, c) + 1));
+	if (!matrix)
+		return (NULL);
+
+
+	return (matrix);
 }
