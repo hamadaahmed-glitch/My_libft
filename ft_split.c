@@ -129,8 +129,8 @@ char	**ft_split(char const *s, char c)
 }
 
 int main(){
-	char **sp = ft_split(" hello guys              how is          your day        going  ", ' ');
+	char str[] = " hello guys              how is          your day        going  ";
+	char **sp = ft_split(str, ' ');
 	for(int i = 0; *sp; i++)
 		printf(" N[%d], is : %s", i, sp[i]);
-	
 }
