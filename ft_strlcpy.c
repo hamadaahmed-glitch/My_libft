@@ -20,11 +20,11 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size){
 
 
 
-#include <stdio.h>
-int main()
-{
-    char arr[20] = {0};
+// #include <stdio.h>
+// int main()
+// {
+//     char arr[20] = {0};
 
-    int len = (int)ft_strlcpy(arr, "helloword", 6);
-    printf("dest text is : %s, and leng final is : %d", arr, len);
-}
+//     int len = (int)ft_strlcpy(arr, "helloword", 6);
+//     printf("dest text is : %s, and leng final is : %d", arr, len);
+// }
