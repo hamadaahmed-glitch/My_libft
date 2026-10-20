@@ -1,11 +1,11 @@
 #include "libft.h"
-static size_t ft_size_calulate(int n){
+static size_t ft_size_calculate(int n){
     size_t res;
 
     res = 0;
     while(n > 0){
         res *= 10;
-        res += n / 10;
+        n + = n / 10;
     }
     return (res);
 } 
@@ -25,5 +25,5 @@ char *ft_itoa(int n){
         *result = '0';
         return (result);
     }
-    result = (char *)malloc()
+    result = (char *)malloc();
 }
