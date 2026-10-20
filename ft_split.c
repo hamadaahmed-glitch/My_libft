@@ -9,7 +9,7 @@
 /*   Updated: 2026/10/18 17:48:09 by hait-h-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
 #include "libft.h"
 
 void free_all(char **s){
@@ -24,6 +24,8 @@ void free_all(char **s){
 }
 static size_t ft_strlen_set(char const *s, char set){
 	size_t len;
+
+	len = 0;
 	while(s[len] && s[len] == set)
 		len++;
 	return len;
@@ -48,7 +50,7 @@ static size_t ft_strlen_set(char const *s, char set){
 //     }
 //     return (count);
 // }
-#include <stdio.h>
+
 
 static size_t	ft_word_count(const char *str, char set)
 {
@@ -79,13 +81,19 @@ static size_t ft_strdup_set(char *dest, const char *s, size_t start, char set){
 	char *word;
 	size_t len;
 	size_t i;
+
+
 	while(s[start] && s[start] != set)
 		start++;
+
 	len = ft_strlen_set(&s[start], set);
 	word = ft_calloc((len + 1), sizeof(char));
 	i = 0;
-	while(s[start + i] && i < len)
+	printf("DEBUG: Inside ft_split2\n");
+	while(s[start + i] && i < len - 1)
 		dest[i] = s[start + i++];
+	
+	
 	return (i);
 }
 
@@ -110,27 +118,38 @@ char	**ft_split(char const *s, char c)
 	char	**matrix;
 	char **tmp;
 	size_t start;
+	
 	if (!s)
 		return (NULL);
 	count = ft_word_count(s, c);
-	matrix = malloc(sizeof(char *) * (count + 1));
+	//matrix = malloc(sizeof(char *) * (count + 1));
 	matrix = (char **)malloc(sizeof(char *) * (count = ft_word_count(s, c) + 1));
 	if (!matrix)
 		return (NULL);
 	tmp = matrix;
 	start = 0;
-	while(tmp <= (matrix + count))
+	//printf("DEBUG: Inside ft_split\n");
+	while(tmp < (matrix + count))
 	{
+		printf("%zu\n", count);
 		start += ft_strdup_set(*tmp, s, start, c);
 		tmp++;
+		printf("DEBUG: Inside ft_split6\n");
 	}
+	
 	*tmp = NULL;
 	return (matrix);
 }
 
 int main(){
 	char str[] = " hello guys              how is          your day        going  ";
+	printf("DEBUG: Starting test\n");
+    // char **result = ft_split("hello world", ' ');
+    
 	char **sp = ft_split(str, ' ');
+	printf("DEBUG: Split finished, result pointer = %p\n", (void *)sp);
+	if (!sp)
+		return 0;
 	for(int i = 0; *sp; i++)
 		printf(" N[%d], is : %s", i, sp[i]);
 }
