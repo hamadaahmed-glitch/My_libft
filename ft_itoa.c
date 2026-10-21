@@ -1,8 +1,8 @@
 #include "libft.h"
 static size_t ft_size_calculate(int n){
     size_t res;
-    if (n == 0)
-        return (1);
+    // if (n == 0)
+    //     return (1);
     res = 0;
     while(n > 0){
         // res *= 10;
@@ -41,10 +41,11 @@ char *ft_itoa(int n){
 
     if(sign){
         result[0] = '-';
-        sign = 0;
-    }    
-    i = size;
-    while(i < size){
+        //sign = 0;
+    }
+    //sign && result[0] = '-';    
+    i = size + sign;
+    while(i > sign){
         result[i--] = nb % 10 + 48;
         nb /= 10;
     }
