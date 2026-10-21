@@ -15,11 +15,11 @@ char		*ft_itoa(int n)
 	{
 		str[0] = '-';
 		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
+		str = ft_strjoin(str, ft_itoa_rec(-n));
 	}
 
 	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
+		str = ft_strjoin(ft_itoa_rec(n / 10), ft_itoa_rec(n % 10));
 	else if (n < 10 && n >= 0)
 	{
 		str[0] = n + '0';
