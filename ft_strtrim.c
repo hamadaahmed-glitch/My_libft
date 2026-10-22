@@ -79,5 +79,5 @@ char *ft_strtrim(char const *s1, char const *set){
 
 #include <stdio.h>
 int main(){
-    printf("result is : '%s'\n", ft_strtrim(" a a a a a a a  helllo MF a a a a a", " a"));
+    printf("result is : '%s'\n", ft_strtrim(" a a a a a a athefucking test", " a"));
 }
