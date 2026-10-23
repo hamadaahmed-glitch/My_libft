@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <limits.h>
 
 void ft_putnbr_fd(int n, int fd){
     if(n == -2147483648){
@@ -37,8 +38,12 @@ int main(){
     ft_putnbr_fd(-2147483648, 1);
     printf("\n\n");
 
-    printf(" 2147483648 : ");
-    ft_putnbr_fd(2147483648, 1);
+    printf(" INT_MIN : ");
+    ft_putnbr_fd(INT_MIN, 1);
+    printf("\n\n");
+
+    printf(" INT_MAX : ");
+    ft_putnbr_fd(INT_MAX, 1);
     printf("\n\n");
 
 
