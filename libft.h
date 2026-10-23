@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
 
 /*void bzero(void *s, size_t n);
 int isalnum(char c);
@@ -37,4 +38,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 char	*ft_strdup(const char *p);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+void    ft_putchar_fd(char c, int fd);
 #endif
