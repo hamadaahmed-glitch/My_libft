@@ -39,4 +39,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 char	*ft_strdup(const char *p);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void    ft_putchar_fd(char c, int fd);
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 #endif
