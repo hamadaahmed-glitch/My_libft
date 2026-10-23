@@ -20,29 +20,29 @@ void ft_putnbr_fd(int n, int fd){
 
 #include <stdio.h>
 int main(){
-    printf(" 0 : ");
+    printf(" 0 : \n");
     ft_putnbr_fd(0, 1);
     printf("\n\n");
 
 
-    printf(" 15 : ");
+    printf(" 15 : \n");
     ft_putnbr_fd(15, 1);
     printf("\n\n");
 
 
-    printf(" -1 : ");
+    printf(" -1 : \n");
     ft_putnbr_fd(-1, 1);
     printf("\n\n");
 
-    printf(" -2147483648 : ");
+    printf(" -2147483648 : \n");
     ft_putnbr_fd(-2147483648, 1);
     printf("\n\n");
 
-    printf(" INT_MIN : ");
+    printf(" INT_MIN : \n");
     ft_putnbr_fd(INT_MIN, 1);
     printf("\n\n");
 
-    printf(" INT_MAX : ");
+    printf(" INT_MAX : \n");
     ft_putnbr_fd(INT_MAX, 1);
     printf("\n\n");
 
