@@ -15,6 +15,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+
+typedef struct s_list
+{
+    void    *content;
+    struct  s_list *next;
+}   t_list;
+
 /*void bzero(void *s, size_t n);
 int isalnum(char c);
 int isalpha(char c);

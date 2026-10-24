@@ -76,7 +76,7 @@ int main(){
     // printf("\n\n");
     int fd = open("test.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
     if(fd < 0){
-        ft_putstr_fd("you have fucking error", 1);
+        ft_putstr_fd("you have an fucking error", 1);
         return 1;
     }
     ft_putstr_fd("hello guys", fd);
