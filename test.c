@@ -376,22 +376,69 @@
 //     return (result);
 // }
 
+// #include <stdio.h>
+
+// char f(int i, char c){
+//     return c + (i % 26);
+// }
+
+// int main(){
+//     char s[] = "hello mether fuckers guys////";//
+//     char str[30];
+//     int i = 0;
+
+//     while(s[i]){
+//         str[i] = f(i, s[i]);
+//         i++;
+//     }
+//     str[i] = 0;
+//     printf("Orig : %s\n", s);
+//     printf("transformed : %s\n", str);
+// }
+
+#include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-char f(int i, char c){
-    return c + (i % 26);
-}
+int main(void)
+{
+    t_list *head = NULL;
+    t_list *node1;
+    t_list *node2;
+    t_list *node3;
 
-int main(){
-    char s[] = "hello mether fuckers guys////";//
-    char str[30];
+    // 1. Create nodes using ft_lstnew
+    node1 = ft_lstnew("Third node (added first)");
+    node2 = ft_lstnew("Second node");
+    node3 = ft_lstnew("First node (added last)");
+
+    // 2. Add them to the front one by one
+    ft_lstadd_front(&head, node1); 
+    // List state: [node1] -> NULL
+
+    ft_lstadd_front(&head, node2); 
+    // List state: [node2] -> [node1] -> NULL
+
+    ft_lstadd_front(&head, node3); 
+    // List state: [node3] -> [node2] -> [node1] -> NULL
+
+    // 3. Traverse and print the list to verify the order
+    t_list *current = head;
     int i = 0;
-
-    while(s[i]){
-        str[i] = f(i, s[i]);
+    while (current)
+    {
+        printf("Index %d: %s\n", i, (char *)current->content);
+        current = current->next;
         i++;
     }
-    str[i] = 0;
-    printf("Orig : %s\n", s);
-    printf("transformed : %s\n", str);
+
+    // 4. Free allocated memory to prevent leaks
+    while (head)
+    {
+        t_list *temp = head;
+        head = head->next;
+        free(temp); // Note: content was a string literal, so we don't free current->content
+    }
+
+    return (0);
 }
