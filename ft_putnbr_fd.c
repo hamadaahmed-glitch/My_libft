@@ -16,41 +16,68 @@ void ft_putnbr_fd(int n, int fd){
         ft_putnbr_fd(n / 10, fd);
     }
     ft_putchar_fd((n % 10) + 48, fd);
+
+
 }
 
 #include <stdio.h>
 int main(){
-    printf(" 0 : \n");
-    ft_putnbr_fd(0, 1);
-    printf("\n\n");
+
+    // //setbuf(stdout, NULL);
+    // printf(" 0 : \n");
+    // fflush(stdout);
+    // ft_putnbr_fd(0, 1);
+    // printf("\n\n");
+    // fflush(stdout);
 
 
-    printf(" 15 : \n");
-    ft_putnbr_fd(15, 1);
-    printf("\n\n");
+    // ft_putstr_fd(" 0 : \n", 1);
+    // ft_putnbr_fd(0, 1);
+    // ft_putstr_fd("\n\n", 1);
+
+    // printf(" 15 : \n");
+    // fflush(stdout);
+    // ft_putnbr_fd(15, 1);
+    // printf("\n\n");
+    // fflush(stdout);
 
 
-    printf(" -1 : \n");
-    ft_putnbr_fd(-1, 1);
-    printf("\n\n");
+    // printf(" -1 : \n");
+    // fflush(stdout);
+    // ft_putnbr_fd(-1, 1);
+    // printf("\n\n");
+    // fflush(stdout);
 
-    printf(" -2147483648 : \n");
-    ft_putnbr_fd(-2147483648, 1);
-    printf("\n\n");
+    // printf(" -2147483648 : \n");
+    // fflush(stdout);
+    // ft_putnbr_fd(-2147483648, 1);
+    // printf("\n\n");
+    // fflush(stdout);
 
-    printf(" INT_MIN : \n");
-    ft_putnbr_fd(INT_MIN, 1);
-    printf("\n\n");
+    // printf(" INT_MIN : \n");
+    // fflush(stdout);
+    // ft_putnbr_fd(INT_MIN, 1);
+    // printf("\n\n");
+    // fflush(stdout);
 
-    printf(" INT_MAX : \n");
-    ft_putnbr_fd(INT_MAX, 1);
-    printf("\n\n");
+    // printf(" INT_MAX : \n");
+    // fflush(stdout);
+    // ft_putnbr_fd(INT_MAX, 1);
+    // printf("\n\n");
+    // fflush(stdout);
 
 
     // printf(" 0 : ");
     // ft_putnbr_fd(0, 1);
     // printf("\n\n");
     // printf(" 0 : ");
-    // ft_putnbr_fd(0, 1);
+    open(ayoub.txt );
+    write(3, "kra", 3);
+    close(ayoub.txt);
+    int i = -5;
+    while(i < 6){
+        write(1, "\n", 1);
+        ft_putnbr_fd(INT_MIN, i++);
+    }
     // printf("\n\n");
 }
