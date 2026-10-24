@@ -1,5 +1,6 @@
 #include "libft.h"
 #include <limits.h>
+#include <fcntl.h>
 
 void ft_putnbr_fd(int n, int fd){
     if(n == -2147483648){
@@ -71,13 +72,15 @@ int main(){
     // ft_putnbr_fd(0, 1);
     // printf("\n\n");
     // printf(" 0 : ");
-    open(ayoub.txt );
-    write(3, "kra", 3);
-    close(ayoub.txt);
-    int i = -5;
-    while(i < 6){
-        write(1, "\n", 1);
-        ft_putnbr_fd(INT_MIN, i++);
-    }
+
     // printf("\n\n");
+    int fd = open("test.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+    if(fd < 0){
+        ft_putstr_fd("you have fucking error", 1);
+        return 1;
+    }
+    ft_putstr_fd("hello guys", fd);
+    fd = open("test.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+    ft_putstr_fd("\nanother test", fd); // how can i delete and write for clean line
+    close(fd);
 }
