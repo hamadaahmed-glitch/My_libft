@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                       :::      ::::::::    */
+/*   test.c                                            :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/25 14:11:32 by username         #+#    #+#              */
+/*   Updated: 2026/10/25 14:11:32 by username        ###   ########.fr        */
+/*                                                                            */
+/* ************************************************************************** */
+
 // // #include <stdio.h>
 // // #include "libft.h"
 
@@ -42,7 +54,7 @@
 // void free_all(char **s)
 // {
 //     char **temp;
-    
+
 //     if (!s)
 //         return;
 //     temp = s;
@@ -90,7 +102,7 @@
 //         while (s[j + len] && s[j + len] != c)
 //             len++;
 //         matrix[i] = ft_substr(s, j, len);
-//         if (!matrix[i]) 
+//         if (!matrix[i])
 //         {
 //             free_all(matrix);
 //             return (NULL);
@@ -98,7 +110,7 @@
 //         j += len;
 //         i++;
 //     }
-//     matrix[i] = NULL; 
+//     matrix[i] = NULL;
 //     return (matrix);
 // }
 
@@ -106,12 +118,12 @@
 // {
 //     char str[] = " hello guys              how is          your day        going  ";
 //     printf("DEBUG: Starting test\n");
-    
+
 //     char **sp = ft_split(str, ' ');
 //     printf("DEBUG: Split finished, result pointer = %p\n", (void *)sp);
 //     if (!sp)
 //         return (0);
-        
+
 //     int i = 0;
 //     while (sp[i])
 //     {
@@ -122,29 +134,12 @@
 //     return (0);
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // #include <stdio.h>
 // #include "libft.h"
 
 // void free_all(char **s){
 // 	char **temp;
-	
+
 // 	if(!s)
 // 		return ;
 // 	temp = s;
@@ -181,7 +176,6 @@
 // //     return (count);
 // // }
 
-
 // static size_t	ft_word_count(const char *str, char set)
 // {
 // 	size_t	count;
@@ -204,14 +198,13 @@
 // // 	char *temp;
 // // 	while(*s && *s != c)
 // // 		s++;
-	
+
 // // }
 
 // static size_t ft_strdup_set(char *dest, const char *s, size_t start, char set){
 // 	char *word;
 // 	size_t len;
 // 	size_t i;
-
 
 // 	while(s[start] && s[start] != set)
 // 		start++;
@@ -222,8 +215,7 @@
 // 	printf("DEBUG: Inside ft_split2\n");
 // 	while(s[start + i] && i < len - 1)
 // 		dest[i] = s[start + i++];
-	
-	
+
 // 	return (i);
 // }
 
@@ -248,7 +240,7 @@
 // 	char	**matrix;
 // 	char **tmp;
 // 	size_t start;
-	
+
 // 	if (!s)
 // 		return (NULL);
 // 	count = ft_word_count(s, c);
@@ -266,7 +258,7 @@
 // 		tmp++;
 // 		printf("DEBUG: Inside ft_split6\n");
 // 	}
-	
+
 // 	*tmp = NULL;
 // 	return (matrix);
 // }
@@ -275,7 +267,7 @@
 // 	char str[] = " hello guys              how is          your day        going  ";
 // 	printf("DEBUG: Starting test\n");
 //     // char **result = ft_split("hello world", ' ');
-    
+
 // 	char **sp = ft_split(str, ' ');
 // 	printf("DEBUG: Split finished, result pointer = %p\n", (void *)sp);
 // 	if (!sp)
@@ -283,11 +275,6 @@
 // 	for(int i = 0; *sp; i++)
 // 		printf(" N[%d], is : %s", i, sp[i]);
 // }
-
-
-
-
-
 
 // #include "libft.h"
 
@@ -400,45 +387,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+int	main(void)
 {
-    t_list *head = NULL;
-    t_list *node1;
-    t_list *node2;
-    t_list *node3;
+	t_list	*head = NULL;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
 
-    // 1. Create nodes using ft_lstnew
-    node1 = ft_lstnew("Third node (added first)");
-    node2 = ft_lstnew("Second node");
-    node3 = ft_lstnew("First node (added last)");
+	// 1. Create nodes using ft_lstnew
+	node1 = ft_lstnew("Third node (added first)");
+	node2 = ft_lstnew("Second node");
+	node3 = ft_lstnew("First node (added last)");
+	// 2. Add them to the front one by one
+	ft_lstadd_front(&head, node1);
+	// List state: [node1] -> NULL
+	ft_lstadd_front(&head, node2);
+	// List state: [node2] -> [node1] -> NULL
+	ft_lstadd_front(&head, node3);
+	// List state: [node3] -> [node2] -> [node1] -> NULL
+	// 3. Traverse and print the list to verify the order
+	t_list	*current = head;
+	int		i = 0;
 
-    // 2. Add them to the front one by one
-    ft_lstadd_front(&head, node1); 
-    // List state: [node1] -> NULL
+	while (current)
+	{
+		printf("Index %d: %s\n", i, (char *) current->content);
+		current = current->next;
+		i++;
+	}
+	// 4. Free allocated memory to prevent leaks
+	while (head)
+	{
+		t_list	*temp = head;
 
-    ft_lstadd_front(&head, node2); 
-    // List state: [node2] -> [node1] -> NULL
-
-    ft_lstadd_front(&head, node3); 
-    // List state: [node3] -> [node2] -> [node1] -> NULL
-
-    // 3. Traverse and print the list to verify the order
-    t_list *current = head;
-    int i = 0;
-    while (current)
-    {
-        printf("Index %d: %s\n", i, (char *)current->content);
-        current = current->next;
-        i++;
-    }
-
-    // 4. Free allocated memory to prevent leaks
-    while (head)
-    {
-        t_list *temp = head;
-        head = head->next;
-        free(temp); // Note: content was a string literal, so we don't free current->content
-    }
-
-    return (0);
+		head = head->next;
+		free(temp);
+		// Note: content was a string literal, so we don't free current->content
+	}
+	return (0);
 }

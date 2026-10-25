@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hait-h-m <hait-h-m@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/18 17:50:32 by username          #+#    #+#             */
-/*   Updated: 2026/10/18 17:50:32 by hait-h-m         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   libft.h                                           :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/18 17:50:32 by username         #+#    #+#              */
+/*   Updated: 2026/10/25 14:11:01 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-
 typedef struct s_list
 {
-    void    *content;
-    struct  s_list *next;
-}   t_list;
+
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 /*void bzero(void *s, size_t n);
 int isalnum(char c);
@@ -45,10 +45,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 char	*ft_strdup(const char *p);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-void    ft_putchar_fd(char c, int fd);
-void    ft_putchar_fd(char c, int fd);
-void    ft_putstr_fd(char *s, int fd);
-void    ft_putendl_fd(char *s, int fd);
-void    ft_putnbr_fd(int n, int fd);
-t_list  *ft_lstnew(void *content);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void *content);
 #endif

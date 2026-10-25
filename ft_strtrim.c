@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                       :::      ::::::::    */
+/*   ft_strtrim.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/25 14:10:45 by username         #+#    #+#              */
+/*   Updated: 2026/10/25 14:10:45 by username        ###   ########.fr        */
+/*                                                                            */
+/* ************************************************************************** */
+
 // #include "libft.h"
 
 // char *ft_strtrim(char const *s1, char const *set){
@@ -5,11 +17,11 @@
 //     char const *end;
 //     const char *set_temp;
 //     int verify;
-    
+
 //     size_t len;
 //     if(!s1 || !set)
 //         return (NULL);
-    
+
 //     start = s1;
 //     verify = 1;
 //     while(*start && verify){
@@ -19,65 +31,62 @@
 //         start++;
 //     }
 
-
 //     len = ft_strlen(s1);
 //     verify = 1;
-//     end = s1 + len - 1; 
+//     end = s1 + len - 1;
 //     while(end != start && verify)
 //     {
 //         set_temp = set;
-//         while(*set_temp && *set_temp == *end) 
+//         while(*set_temp && *set_temp == *end)
 //             set_temp++;
 //         end--;
 //     }
 //     return (ft_substr(s1, start - s1, end - start));
 // }
 
-
 // #include <stdio.h>
 // int main(){
 //     printf("result is : %s", ft_strtrim(" a a a a a a a  helllo MF a a a a a", " a"));
 // }
 
-
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set){
-    const char *start;
-    const char *end;
-    const char *set_temp;
-    
-    if (!s1 || !set)
-        return (NULL);
-    
-    start = s1;
-    while (*start) {
-        set_temp = set;
-        while (*set_temp && *set_temp != *start)
-            set_temp++;
-        if (!*set_temp) 
-            break;
-        start++;
-    }
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	const char	*start;
+	const char	*end;
+	const char	*set_temp;
 
-    end = s1 + ft_strlen(s1) - 1;
-    
-    if (start > end)
-        return ((char *)ft_calloc(1, 1));
-
-    while (end >= start) {
-        set_temp = set;
-        while (*set_temp && *set_temp != *end)
-            set_temp++;
-        if (!*set_temp) 
-            break;
-        end--;
-    }
-
-    return (ft_substr(s1, start - s1, end - start + 1));
+	if (!s1 || !set)
+		return (NULL);
+	start = s1;
+	while (*start)
+	{
+		set_temp = set;
+		while (*set_temp && *set_temp != *start)
+			set_temp++;
+		if (!*set_temp)
+			break ;
+		start++;
+	}
+	end = s1 + ft_strlen(s1) - 1;
+	if (start > end)
+		return ((char *) ft_calloc(1, 1));
+	while (end >= start)
+	{
+		set_temp = set;
+		while (*set_temp && *set_temp != *end)
+			set_temp++;
+		if (!*set_temp)
+			break ;
+		end--;
+	}
+	return (ft_substr(s1, start - s1, end - start + 1));
 }
 
 #include <stdio.h>
-int main(){
-    printf("result is : '%s'\n", ft_strtrim(" a a a a a a athefucking test", " a"));
+
+int	main(void)
+{
+	printf("result is : '%s'\n", ft_strtrim(" a a a a a a athefucking test", " a"));
 }
