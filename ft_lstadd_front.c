@@ -1,13 +1,8 @@
 #include "libft.h"
 
 void ft_lstadd_front(t_list **lst, t_list *new){
-    if(!new)
+    if (!lst || !new)
         return ;
-    if(!lst)
-    {
-        *lst = new;
-        return ;
-    }
     new->next = *lst;
     *lst = new;
 }
@@ -33,11 +28,12 @@ int main(){
         printf("result is  : %s", (char *)current->content);
         current = current->next;
     }
-
-    
-
-    
-    
-
-
+    t_list *temp;
+    while(head)
+    {
+        temp = head;
+        head = head->next;
+        free(temp);
+    }
+    return 0x00;    
 }
